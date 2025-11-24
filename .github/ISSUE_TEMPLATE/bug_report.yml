@@ -1,0 +1,35 @@
+name: 要望・不具合報告
+description: 要望や不具合を起票するフォーム
+title: "[要望/不具合]: "
+labels: ["triage"]
+body:
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 対象サービス
+      options:
+        - AA
+        - BB
+        - CC
+    validations:
+      required: true  # ← これで入力を強制できる
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 概要
+      description: 何がどうなってほしいか記載してください
+      placeholder: "例) 予約登録画面で、XXボタンを押した際に..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      options:
+        - 高 (サービス影響あり/即時対応)
+        - 中 (次期リリースで対応)
+        - 低 (余裕があれば)
+    validations:
+      required: true
